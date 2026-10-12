@@ -54,10 +54,9 @@ h2.caps{font-style:normal;letter-spacing:.38em;text-transform:uppercase;font-siz
 .proj.rev .ghost{right:auto;left:-30%}
 .proj-in{position:relative;max-width:1280px;margin:0 auto;padding-inline:clamp(16px,5vw,48px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,64px);align-items:center}
 .proj.rev .proj-fig{order:2}
-.proj.wide .proj-in{grid-template-columns:minmax(0,1fr);max-width:1200px;gap:clamp(24px,4vw,48px)}
-.proj.wide .proj-fig img{max-height:none;width:100%;max-width:1100px;margin:0 auto}
-.proj.wide .proj-txt{max-width:760px;margin:0 auto;width:100%}
-.proj.wide .ghost{opacity:.08}
+.proj.wide .proj-in{max-width:1440px;grid-template-columns:minmax(0,9fr) minmax(0,5fr);gap:clamp(24px,4vw,56px)}
+.proj.wide.rev .proj-in{grid-template-columns:minmax(0,5fr) minmax(0,9fr)}
+.proj.wide .proj-fig img{max-height:620px}
 .proj-fig{margin:0}
 .proj-fig img{width:100%;max-height:720px;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(0,0,0,.28));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .proj:hover .proj-fig img{transform:translateY(-6px) scale(1.015)}
@@ -91,7 +90,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.75rem;lett
 .lb p{margin:0;color:var(--muted);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
 .lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;background:none;border:1px solid var(--line);color:var(--paper);font:inherit;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
 @media (max-width:760px){
-  .about,.proj-in{grid-template-columns:1fr}
+  .about,.proj-in,.proj.wide .proj-in,.proj.wide.rev .proj-in{grid-template-columns:1fr}
   .about img{max-width:420px}
   .proj.rev .proj-fig{order:0}
   .proj-fig img{max-height:460px;margin:0 auto}
@@ -174,7 +173,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.75rem;lett
       <p class="tools">Packaging sostenible</p>
     </div>
   </div>
-</article><article class="proj on-light wide" id="serpentine" style="--band:#EDDDBE">
+</article><article class="proj on-light rev wide" id="serpentine" style="--band:#EDDDBE">
   <img class="ghost" src="img/serpentine.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="proj-in">
     <figure class="proj-fig"><img src="img/serpentine.webp" alt="Propuesta Serpentine Pavilion 2025, pabellón temporal · londres" loading="lazy"></figure>
@@ -198,7 +197,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.75rem;lett
       <p class="tools">Piedra · Metal · Papel Washi</p>
     </div>
   </div>
-</article><article class="proj on-light wide" id="lagasca" style="--band:#D9A053">
+</article><article class="proj on-light rev wide" id="lagasca" style="--band:#D9A053">
   <img class="ghost" src="img/lagasca.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="proj-in">
     <figure class="proj-fig"><img src="img/lagasca.webp" alt="Banco Lagasca, mobiliario para woodendot" loading="lazy"></figure>
@@ -222,7 +221,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.75rem;lett
       <p class="tools">Diseño inclusivo · ABS reciclable · Silicona</p>
     </div>
   </div>
-</article><article class="proj on-light wide" id="carrito" style="--band:#FABE74">
+</article><article class="proj on-light rev wide" id="carrito" style="--band:#FABE74">
   <img class="ghost" src="img/carrito.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="proj-in">
     <figure class="proj-fig"><img src="img/carrito.webp" alt="Carrito auxiliar, propuesta para woodendot" loading="lazy"></figure>
@@ -234,7 +233,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.75rem;lett
       <p class="tools">Solid Edge · KeyShot · Bocetos a mano</p>
     </div>
   </div>
-</article><article class="proj on-dark wide" id="banco" style="--band:#735332">
+</article><article class="proj on-dark  wide" id="banco" style="--band:#735332">
   <img class="ghost" src="img/banco.webp" alt="" aria-hidden="true" loading="lazy">
   <div class="proj-in">
     <figure class="proj-fig"><img src="img/banco.webp" alt="Banco versátil, propuesta para woodendot" loading="lazy"></figure>
