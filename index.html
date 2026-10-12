@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ivanna Plaza · Portafolio</title>
+<meta name="description" content="Portafolio de Ivanna Plaza, diseñadora de producto en Madrid (UDIT): packaging, mobiliario y diseño inclusivo.">
+<meta property="og:title" content="Ivanna Plaza · Portafolio">
+<meta property="og:description" content="Diseñadora de producto · Madrid">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500&display=swap">
+<style>
+/* Layout: galería de una sola columna, oscura, con franjas de color por proyecto como en el portafolio original */
+:root{
+  --ink:#1C1C1C; --ink-2:#262524; --paper:#F2EEE8; --muted:#A8A39C; --line:#3A3836; --dark-text:#2A2118;
+  --display:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,5vw,48px)}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:600;letter-spacing:.32em;font-size:.82rem;text-decoration:none}
+nav.top ul{display:flex;gap:clamp(12px,3vw,28px);list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top ul a{text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+nav.top ul a:hover,nav.top ul a:focus-visible{color:var(--paper)}
+:focus-visible{outline:1px solid var(--paper);outline-offset:4px}
+.hero{text-align:center;padding-block:clamp(56px,10vw,120px) clamp(48px,8vw,96px)}
+.hero .eyebrow{font-family:var(--display);font-weight:700;letter-spacing:.3em;font-size:.85rem;margin:0 0 14px}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,8.5vw,5.4rem);letter-spacing:.38em;margin:0 0 clamp(28px,4vw,44px);line-height:1;padding-left:.38em}
+.hero-img{max-width:620px;margin:0 auto;overflow:hidden}
+.hero-img img{width:100%;aspect-ratio:448/237;object-fit:cover;filter:grayscale(1)}
+section{padding-block:clamp(56px,9vw,110px)}
+h2{font-family:var(--display);font-weight:400;font-style:italic;font-size:clamp(2.4rem,5vw,3.4rem);margin:0 0 18px;line-height:1.05;text-wrap:balance}
+h2.caps{font-style:normal;letter-spacing:.38em;text-transform:uppercase;font-size:clamp(1.8rem,5.5vw,3.2rem);padding-left:.38em}
+.about{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.about img{width:100%;aspect-ratio:512/769;object-fit:cover}
+.about .txt{min-width:0;max-width:62ch;color:#D9D4CC}
+.about .txt p{margin:0 0 14px}
+.about .hi{font-family:var(--display);font-size:1.45rem;color:var(--paper);font-style:italic}
+.interests .txt{max-width:68ch;color:#D9D4CC}
+.interests p{margin:0 0 18px}
+.interests .lede::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.82;padding:6px 10px 0 0;color:var(--paper)}
+.proj-head{text-align:center;border-top:1px solid var(--line)}
+.proj-head p{color:var(--muted);max-width:52ch;margin:0 auto}
+.proj{position:relative;overflow:hidden;background:var(--band);padding-block:clamp(56px,8vw,100px)}
+.proj .ghost{position:absolute;width:95%;max-width:none;right:-30%;top:50%;transform:translateY(-50%);opacity:.12;filter:blur(2px);pointer-events:none}
+.proj.rev .ghost{right:auto;left:-30%}
+.proj-in{position:relative;max-width:1080px;margin:0 auto;padding-inline:clamp(16px,5vw,48px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,64px);align-items:center}
+.proj.rev .proj-fig{order:2}
+.proj-fig{margin:0}
+.proj-fig img{width:100%;max-height:520px;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(0,0,0,.28));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.proj:hover .proj-fig img{transform:translateY(-6px) scale(1.015)}
+.proj-txt{min-width:0}
+.on-dark .proj-txt{color:#F4EEE6}
+.on-light .proj-txt{color:var(--dark-text)}
+.idx{font-size:.72rem;letter-spacing:.2em;opacity:.7;font-variant-numeric:tabular-nums}
+.proj h3{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.24em;font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.15;margin:6px 0 4px;text-wrap:balance}
+.proj .sub{font-family:var(--display);font-style:italic;font-size:1.2rem;margin:0 0 18px;opacity:.9}
+.proj-txt p{margin:0 0 12px;font-size:.95rem;max-width:62ch}
+.proj .tools{margin-top:18px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75;border-top:1px solid currentColor;padding-top:12px;display:inline-block}
+.gallery-head{text-align:right}
+.gallery-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:40px}
+.g-item{margin:0}
+.g-btn{all:unset;cursor:zoom-in;display:block;overflow:hidden;background:var(--ink-2)}
+.g-btn img{width:100%;aspect-ratio:910/467;object-fit:cover;transition:transform .5s ease,opacity .3s}
+.g-btn:hover img{transform:scale(1.03)}
+.g-btn:focus-visible{outline:1px solid var(--paper);outline-offset:4px}
+.g-item figcaption{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:10px}
+.contact{text-align:center;border-top:1px solid var(--line)}
+.contact dl{display:grid;gap:10px;margin:28px auto 0;font-size:1.05rem}
+.contact dt{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.contact dd{margin:0 0 12px}
+.contact a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
+.contact a:hover{border-color:var(--paper)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.75rem;letter-spacing:.12em;text-align:center;padding-block:28px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(14,14,14,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px}
+.lb img{max-height:82vh;width:auto;max-width:100%}
+.lb p{margin:0;color:var(--muted);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;background:none;border:1px solid var(--line);color:var(--paper);font:inherit;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
+@media (max-width:760px){
+  .about,.proj-in{grid-template-columns:1fr}
+  .about img{max-width:320px}
+  .proj.rev .proj-fig{order:0}
+  .proj-fig img{max-height:340px;margin:0 auto}
+  .grid{grid-template-columns:1fr}
+  .gallery-head{text-align:left}
+  nav.top ul{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#inicio">IVANNA PLAZA</a>
+  <ul><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#galeria">Galería</a></li><li><a href="#contacto">Contacto</a></li></ul>
+</div></nav>
+<header class="hero wrap" id="inicio">
+  <p class="eyebrow">IVANNA PLAZA</p>
+  <h1>PORTAFOLIO</h1>
+  <div class="hero-img"><img src="img/hero.jpg" alt="Ivanna Plaza con gafas de sol, retrato en blanco y negro"></div>
+</header>
+<section class="wrap" id="sobre-mi">
+  <div class="about">
+    <img src="img/perfil.jpg" alt="Retrato de Ivanna Plaza con blazer claro">
+    <div class="txt">
+      <h2>Sobre mí</h2>
+      <p class="hi">¡Hola! Mi nombre es Ivanna Plaza.</p>
+      <p>Soy diseñadora de producto, actualmente cursando mis estudios en la Universidad de Diseño, Innovación y Tecnología (UDIT) en Madrid, España. Mi enfoque en el diseño combina sensibilidad estética con funcionalidad, buscando soluciones que generen impacto real en la vida de las personas.</p>
+      <p>A lo largo de mis estudios he desarrollado distintos proyectos que van desde el diseño de muebles hasta envases sostenibles, explorando materiales, procesos y narrativas.</p>
+      <p>Me apasiona entender cómo las personas interactúan con los objetos, y cómo el diseño puede transformar pequeñas experiencias cotidianas en algo significativo.</p>
+      <p>Este espacio es una muestra de mi visión, mis procesos y mi evolución como diseñadora.</p>
+      <p>Bienvenidos.</p>
+    </div>
+  </div>
+</section>
+<section class="wrap interests" id="intereses">
+  <h2>Intereses</h2>
+  <div class="txt">
+    <p class="lede">Empecé la carrera de Diseño de Producto a los 18 años, aunque no siempre fue mi primera opción. Siempre me había atraído el mundo empresarial y, más específicamente, el universo de los cosméticos, productos de belleza y fragancias. A esa edad no sabía si ese interés era algo momentáneo o algo que perduraría, pero lo que sí tenía claro era mi pasión por el diseño y por todo el proceso que hay detrás de cada producto.</p>
+    <p>Fue entonces cuando descubrí la carrera de Diseño de Producto: tenía todo lo que buscaba y, lo más importante, ofrecía un abanico amplio de posibilidades, desde mobiliario hasta packaging. Ya en mi segundo año, confirmé que ese interés por el mundo de la belleza y las fragancias seguía muy presente, especialmente en lo relacionado con el diseño del packaging.</p>
+    <p>Por eso, quiero seguir esa pasión y enfocarme en el proceso creativo detrás de cada envase. Aún no sé con certeza hacia dónde me llevará este camino, pero sé que quiero seguir profundizando en lo que me mueve y aprender cada día más sobre el mundo del diseño.</p>
+  </div>
+</section>
+<section class="wrap proj-head" id="proyectos">
+  <h2 class="caps">Proyectos</h2>
+  <p>Cada proyecto aquí representa una etapa de mi evolución como diseñadora de producto. Explora mi proceso, mi perspectiva y el diseño como forma de ver el mundo.</p>
+</section>
+<article class="proj on-dark " id="unbound" style="--band:#9A4921">
+  <img class="ghost" src="img/unbound.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/unbound.webp" alt="Unbound, frasco de perfume" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">01 / 09</span>
+      <h3>Unbound</h3>
+      <p class="sub">Frasco de perfume</p>
+      <p>Unbound fue creado para L’Oréal Brandstorm 2026. Este proyecto en equipo busca transmitir una historia a través del diseño de un frasco: una historia de amor y evolución.</p><p>Nace a partir de una campaña centrada en la mujer y en el concepto de compromiso. Durante muchos años, las mujeres eran prometidas sin tener voz sobre su propio futuro. Aunque estos ideales han cambiado, en muchos casos ha quedado una percepción negativa del compromiso, asociada a la dependencia o la pérdida de libertad.</p><p>Este proyecto busca replantear esa idea, proponiendo el compromiso como una elección consciente, libre y personal, y no como una imposición.</p><p>Este mensaje se refleja en el diseño del frasco. El espiral exterior evoca una jaula, pero abierta, simbolizando que hoy las mujeres tienen el poder de decidir su propio camino. Elegir compartir la vida con alguien deja de ser una limitación para convertirse en una decisión propia, válida y libre.</p>
+      <p class="tools">L&#x27;Oréal Brandstorm 2026 · Proyecto en equipo</p>
+    </div>
+  </div>
+</article><article class="proj on-dark rev" id="cities" style="--band:#6E4015">
+  <img class="ghost" src="img/cities.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/cities.webp" alt="Cities in a Bottle, frasco de perfume conceptual" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">02 / 09</span>
+      <h3>Cities in a Bottle</h3>
+      <p class="sub">Frasco de perfume conceptual</p>
+      <p>Este proyecto consistió en diseñar un frasco de perfume conceptual que ofreciera una experiencia emocional, más allá de la fragancia. Inspirado en marcas como Le Labo y Byredo, el diseño toma la forma de un libro, reforzando la idea de que cada aroma es una historia personal.</p><p>Me encargué del desarrollo conceptual, la investigación de mercado y la elección de materiales, combinando vidrio y acero. Utilicé herramientas como bocetos a mano, modelado en Solid Edge y renders en KeyShot. Este trabajo me permitió explorar el diseño como medio narrativo y simbólico, y me motivó a seguir profundizando en la interacción sensorial y la sostenibilidad en el packaging.</p>
+      <p class="tools">Solid Edge · KeyShot · Bocetos a mano</p>
+    </div>
+  </div>
+</article><article class="proj on-dark " id="cocoart" style="--band:#545454">
+  <img class="ghost" src="img/cocoart.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/cocoart.webp" alt="Cocoart Brush, envase refillable para el cuidado capilar" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">03 / 09</span>
+      <h3>Cocoart Brush</h3>
+      <p class="sub">Envase refillable para el cuidado capilar</p>
+      <p>Cocoart brush es un proyecto que aborda el desperdicio de producto generado por los envases tradicionales de shampoo y acondicionador, que impiden aprovechar el 100% de su contenido y dificultan su reciclaje.</p><p>A partir del análisis de packagings capilares existentes, se desarrolló una propuesta de envase refillable que optimiza el vaciado del producto y mejora la experiencia de uso.</p><p>La solución integra un cepillo masajeador para el cuero cabelludo, que viene a ser la tapa del producto, utilizando el propio envase como mango y manteniéndolo en posición invertida, lo que facilita el flujo del producto, reduce residuos y promueve prácticas más sostenibles en el consumo cotidiano.</p>
+      <p class="tools">Packaging sostenible</p>
+    </div>
+  </div>
+</article><article class="proj on-light rev" id="serpentine" style="--band:#EDDDBE">
+  <img class="ghost" src="img/serpentine.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/serpentine.webp" alt="Propuesta Serpentine Pavilion 2025, pabellón temporal · londres" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">04 / 09</span>
+      <h3>Propuesta Serpentine Pavilion 2025</h3>
+      <p class="sub">Pabellón temporal · Londres</p>
+      <p>Propuesta de diseño conceptual de un pabellón temporal para la Serpentine Gallery en Londres, enfocado en fomentar la interacción social y cultural a través de un espacio accesible, sostenible y multifuncional.</p><p>Mi propuesta combina materiales ecológicos como bambú, bioplásticos y aluminio reciclado, y se adapta a distintos públicos con rampas, zonas de descanso y un escenario para eventos.</p><p>Este proyecto me permitió integrar sostenibilidad, diseño inclusivo y arquitectura efímera en una propuesta pensada para generar impacto comunitario.</p>
+      <p class="tools">Bambú · Bioplásticos · Aluminio reciclado</p>
+    </div>
+  </div>
+</article><article class="proj on-dark " id="elements" style="--band:#72706B">
+  <img class="ghost" src="img/elements.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/elements.webp" alt="Elements, lámpara de mesa" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">05 / 09</span>
+      <h3>Elements</h3>
+      <p class="sub">Lámpara de mesa</p>
+      <p>Este proyecto consiste en el diseño de una lámpara de mesa desarrollada a partir de tres materiales principales: piedra, metal y papel Washi, con el objetivo de explorar las relaciones de fuerza, poder e interdependencia entre ellos.</p><p>El concepto del diseño se inspira en la estructura y el ciclo natural de un árbol, entendiendo que todos los materiales provienen de la naturaleza y forman parte de un mismo ecosistema. La piedra, ubicada en la base, representa las raíces y el suelo, aportando estabilidad y soporte. El metal, presente en la estructura, simboliza el tronco como elemento resistente y estructural, y el papel Washi, colocado en la parte superior, funciona como las hojas, permitiendo la difusión de la luz y aportando ligereza al conjunto. La luz se integra como un cuarto material, formando parte del sistema y reforzando el concepto de equilibrio entre los elementos.</p><p>De esta manera, la lámpara no solo cumple una función lumínica, sino que comunica una narrativa basada en la naturaleza y en la importancia de cada material dentro del diseño.</p>
+      <p class="tools">Piedra · Metal · Papel Washi</p>
+    </div>
+  </div>
+</article><article class="proj on-light rev" id="lagasca" style="--band:#D9A053">
+  <img class="ghost" src="img/lagasca.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/lagasca.webp" alt="Banco Lagasca, mobiliario para woodendot" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">06 / 09</span>
+      <h3>Banco Lagasca</h3>
+      <p class="sub">Mobiliario para Woodendot</p>
+      <p>Banco Lagasca es un proyecto de diseño de mobiliario que explora la funcionalidad y la estética minimalista, inspirado en los valores de sostenibilidad y artesanía de la marca Woodendot. La pieza busca optimizar espacios pequeños a través de una estructura asimétrica con almacenaje integrado, manteniendo un lenguaje cálido y contemporáneo.</p><p>Desde la investigación de marca y generación de ideas, hasta el diseño final, modelado 3D, renders y prototipado físico. Utilicé herramientas como bocetos a mano, maquetas en MDF, modelado en Rhinoceros y Solid Edge, renders en KeyShot y edición en Illustrator y Photoshop.</p><p>Este proyecto me permitió profundizar en el diseño desde la identidad de marca y comprender cómo traducir valores como sostenibilidad y funcionalidad en una pieza tangible. Aprendí a tomar decisiones técnicas y estéticas con coherencia y a comunicar el proyecto de forma visual.</p>
+      <p class="tools">Rhinoceros · Solid Edge · KeyShot · Maquetas en MDF</p>
+    </div>
+  </div>
+</article><article class="proj on-light " id="easydent" style="--band:#F5DB5C">
+  <img class="ghost" src="img/easydent.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/easydent.webp" alt="EasyDent, dispensador automático de pasta dental" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">07 / 09</span>
+      <h3>EasyDent</h3>
+      <p class="sub">Dispensador automático de pasta dental</p>
+      <p>EasyDent es una propuesta de dispensador automático de pasta dental diseñado para personas con movilidad reducida, adultos mayores y usuarios que valoran la autonomía. Su activación sin contacto, a través de un sensor de proximidad, y su cartucho recargable facilitan el uso diario sin esfuerzo físico.</p><p>El diseño combina ergonomía, accesibilidad y sostenibilidad, utilizando materiales como ABS reciclable, silicona y polietileno. Mi trabajo abarcó desde el análisis del mercado hasta la creación del sistema interno y el refinamiento formal. Utilicé herramientas como bocetos a mano, modelado en Solid Edge y renders en KeyShot.</p><p>Este proyecto me permitió profundizar en el diseño inclusivo y reforzó mi interés por desarrollar productos accesibles y sostenibles para mejorar la vida cotidiana.</p>
+      <p class="tools">Diseño inclusivo · ABS reciclable · Silicona</p>
+    </div>
+  </div>
+</article><article class="proj on-light rev" id="carrito" style="--band:#FABE74">
+  <img class="ghost" src="img/carrito.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/carrito.webp" alt="Carrito auxiliar, propuesta para woodendot" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">08 / 09</span>
+      <h3>Carrito auxiliar</h3>
+      <p class="sub">Propuesta para Woodendot</p>
+      <p>Este carrito auxiliar fue diseñado para ofrecer máxima funcionalidad y versatilidad sin comprometer la estética. Está compuesto por dos carritos unidos mediante una pieza central de madera, cada uno con compartimentos accesibles por ambos lados. Al separarlos, el producto revela mayor espacio útil y nuevas configuraciones de uso, permitiendo adaptarse a distintas necesidades de almacenamiento y transporte.</p><p>Mi trabajo abarcó desde el análisis del mercado hasta la creación del diseño tanto interno como externo. Utilicé herramientas como bocetos a mano, modelado en Solid Edge y renders en KeyShot.</p><p>La propuesta busca optimizar el aprovechamiento del espacio y ofrecer una experiencia flexible y adaptable dentro de un solo producto.</p>
+      <p class="tools">Solid Edge · KeyShot · Bocetos a mano</p>
+    </div>
+  </div>
+</article><article class="proj on-dark " id="banco" style="--band:#735332">
+  <img class="ghost" src="img/banco.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="proj-in">
+    <figure class="proj-fig"><img src="img/banco.webp" alt="Banco versátil, propuesta para woodendot" loading="lazy"></figure>
+    <div class="proj-txt">
+      <span class="idx">09 / 09</span>
+      <h3>Banco versátil</h3>
+      <p class="sub">Propuesta para Woodendot</p>
+      <p>Este banco versátil fue diseñado con el objetivo de adaptarse a distintos entornos y usos. La parte superior funciona como un asiento cómodo, mientras que la estructura inferior incorpora estantes horizontales que permiten el almacenamiento práctico y decorativo.</p><p>Utilicé herramientas como bocetos a mano, modelado en Solid Edge y renders en KeyShot para llevar a cabo la representación visual.</p><p>Su diseño compacto y en ángulo lo hace ideal para optimizar espacios pequeños, combinando funcionalidad y estética en un solo elemento que responde a las necesidades del usuario de forma sencilla y eficiente.</p>
+      <p class="tools">Solid Edge · KeyShot · Bocetos a mano</p>
+    </div>
+  </div>
+</article>
+<section class="wrap" id="galeria">
+  <div class="gallery-head"><h2 class="caps">Galería</h2><p>Procesos detrás de cada proyecto</p></div>
+  <div class="grid"><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-serpentine.jpg" data-cap="Serpentine Pavilion 2025"><img src="img/g-serpentine.jpg" alt="Proceso de Serpentine Pavilion 2025" loading="lazy"></button><figcaption>Serpentine Pavilion 2025</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-cities.jpg" data-cap="Cities in a Bottle"><img src="img/g-cities.jpg" alt="Proceso de Cities in a Bottle" loading="lazy"></button><figcaption>Cities in a Bottle</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-lagasca.jpg" data-cap="Banco Lagasca"><img src="img/g-lagasca.jpg" alt="Proceso de Banco Lagasca" loading="lazy"></button><figcaption>Banco Lagasca</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-easydent.jpg" data-cap="EasyDent"><img src="img/g-easydent.jpg" alt="Proceso de EasyDent" loading="lazy"></button><figcaption>EasyDent</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-cocoart.jpg" data-cap="Cocoart Brush"><img src="img/g-cocoart.jpg" alt="Proceso de Cocoart Brush" loading="lazy"></button><figcaption>Cocoart Brush</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-woodendot.jpg" data-cap="Carrito y Banco · Woodendot"><img src="img/g-woodendot.jpg" alt="Proceso de Carrito y Banco · Woodendot" loading="lazy"></button><figcaption>Carrito y Banco · Woodendot</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-elements.jpg" data-cap="Elements · Lámpara de mesa"><img src="img/g-elements.jpg" alt="Proceso de Elements · Lámpara de mesa" loading="lazy"></button><figcaption>Elements · Lámpara de mesa</figcaption></figure><figure class="g-item"><button type="button" class="g-btn" data-src="img/g-unbound.jpg" data-cap="Unbound · Frasco de perfume"><img src="img/g-unbound.jpg" alt="Proceso de Unbound · Frasco de perfume" loading="lazy"></button><figcaption>Unbound · Frasco de perfume</figcaption></figure></div>
+</section>
+<section class="wrap contact" id="contacto">
+  <h2 class="caps">Contacto</h2>
+  <dl>
+    <div><dt>Teléfono</dt><dd><a href="tel:+34671791241">+34 671 791 241</a></dd></div>
+    <div><dt>WhatsApp</dt><dd><a href="https://wa.me/593968454490" target="_blank" rel="noopener">+593 968 454 490</a></dd></div>
+    <div><dt>Mail</dt><dd><a href="mailto:ivannaplazam@gmail.com">ivannaplazam@gmail.com</a></dd></div>
+  </dl>
+</section>
+<footer>© 2026 IVANNA PLAZA · DISEÑO DE PRODUCTO · MADRID</footer>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button type="button" id="lb-close">Cerrar</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),im=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+  document.querySelectorAll('.g-btn').forEach(function(b){b.addEventListener('click',function(){
+    im.src=b.dataset.src;im.alt=b.dataset.cap;cap.textContent=b.dataset.cap;lb.hidden=false;document.getElementById('lb-close').focus();});});
+  function close(){lb.hidden=true;}
+  document.getElementById('lb-close').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
